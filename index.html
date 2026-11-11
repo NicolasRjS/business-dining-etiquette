@@ -58,46 +58,72 @@
           </div>
           <div class="scene-table">
             <svg class="scene-art" viewBox="0 0 1000 520" role="img" aria-labelledby="scene-title">
-            <title id="scene-title">A place setting that arranges itself: dinner plate in the center, napkin and two forks on the left, knife and spoon on the right, bread plate at the upper left, dessert fork and spoon above the plate, water and wine glasses at the upper right.</title>
-            <g class="pc" data-seq="0" data-depth="0.5" data-from="0,520,-40">
-              <circle class="sc-plate" cx="500" cy="300" r="150"/>
-              <circle class="sc-ring" cx="500" cy="300" r="104"/>
+            <title id="scene-title">A place setting seen from above: dinner plate in the center, napkin and two forks on the left, knife and spoon on the right, bread plate at the upper left, dessert fork and spoon above the plate, water and wine glasses at the upper right.</title>
+            <defs>
+              <filter id="sh" x="-30%" y="-30%" width="160%" height="170%">
+                <feDropShadow dx="0" dy="12" stdDeviation="11" flood-color="#000" flood-opacity="0.5"/>
+              </filter>
+              <filter id="sh-soft" x="-30%" y="-30%" width="160%" height="170%">
+                <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000" flood-opacity="0.45"/>
+              </filter>
+              <filter id="linen" x="0" y="0" width="100%" height="100%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.9 0.35" numOctaves="2" seed="7" result="n"/>
+                <feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.16 0" result="grain"/>
+                <feComposite in="grain" in2="SourceGraphic" operator="in" result="g2"/>
+                <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="g2"/></feMerge>
+              </filter>
+              <radialGradient id="gPlate" cx="38%" cy="30%" r="80%">
+                <stop offset="0" stop-color="#FFFFFF"/><stop offset="0.55" stop-color="#F6F1E6"/><stop offset="1" stop-color="#CFC6B3"/>
+              </radialGradient>
+              <radialGradient id="gWell" cx="50%" cy="50%" r="50%">
+                <stop offset="0" stop-color="#FDFBF6"/><stop offset="0.8" stop-color="#F3EEE2"/><stop offset="1" stop-color="#D8D0BF"/>
+              </radialGradient>
+              <linearGradient id="gSteel" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#7F8A9A"/><stop offset="0.3" stop-color="#F7F9FB"/><stop offset="0.55" stop-color="#C6CED8"/><stop offset="1" stop-color="#6C7686"/>
+              </linearGradient>
+              <linearGradient id="gSteelDark" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#5E6877"/><stop offset="0.35" stop-color="#D5DBE3"/><stop offset="1" stop-color="#4E5765"/>
+              </linearGradient>
+              <radialGradient id="gBowl" cx="40%" cy="30%" r="75%">
+                <stop offset="0" stop-color="#FFFFFF"/><stop offset="0.5" stop-color="#B9C2CE"/><stop offset="1" stop-color="#737E8E"/>
+              </radialGradient>
+              <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#9A6A0E"/><stop offset="0.3" stop-color="#FFE59A"/><stop offset="0.6" stop-color="#E6A91F"/><stop offset="1" stop-color="#8C5C08"/>
+              </linearGradient>
+              <radialGradient id="gGoldBowl" cx="40%" cy="30%" r="75%">
+                <stop offset="0" stop-color="#FFF3C4"/><stop offset="0.5" stop-color="#E6A91F"/><stop offset="1" stop-color="#8C5C08"/>
+              </radialGradient>
+              <linearGradient id="gNapkin" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#B63A25"/><stop offset="0.45" stop-color="#E9603F"/><stop offset="0.62" stop-color="#D44B30"/><stop offset="1" stop-color="#A93320"/>
+              </linearGradient>
+              <radialGradient id="gWater" cx="38%" cy="32%" r="75%">
+                <stop offset="0" stop-color="#E9F7FC"/><stop offset="0.6" stop-color="#9CCBE0"/><stop offset="1" stop-color="#4F8FAE"/>
+              </radialGradient>
+              <radialGradient id="gWine" cx="38%" cy="32%" r="75%">
+                <stop offset="0" stop-color="#D8483B"/><stop offset="0.55" stop-color="#8E1820"/><stop offset="1" stop-color="#4A0A12"/>
+              </radialGradient>
+              <radialGradient id="gBread" cx="40%" cy="30%" r="80%">
+                <stop offset="0" stop-color="#FBE0A0"/><stop offset="0.6" stop-color="#D9A04A"/><stop offset="1" stop-color="#9C6520"/>
+              </radialGradient>
+              <linearGradient id="gMat" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#24365A"/><stop offset="1" stop-color="#172340"/>
+              </linearGradient>
+            </defs>
+            <g class="sc-mat">
+              <rect x="112" y="10" width="776" height="500" rx="28" fill="url(#gMat)" filter="url(#linen)"/>
+              <rect x="126" y="24" width="748" height="472" rx="18" fill="none" stroke="#F0B429" stroke-opacity="0.45" stroke-width="2" stroke-dasharray="2 9" stroke-linecap="round"/>
             </g>
-            <g class="pc" data-seq="1" data-depth="1.3" data-from="-330,-120,38">
-              <rect class="sc-napkin" x="150" y="180" width="92" height="270" rx="6"/>
-              <path class="sc-fold" d="M212 180v270"/>
-            </g>
-            <g class="pc" data-seq="2" data-depth="1.0" data-from="-140,330,-115">
-              <path class="sc-steel" d="M285 215v235M269 215v48a16 16 0 0 0 32 0v-48"/>
-            </g>
-            <g class="pc" data-seq="3" data-depth="0.8" data-from="-420,60,80">
-              <path class="sc-steel" d="M330 170v280M312 170v58a18 18 0 0 0 36 0v-58"/>
-            </g>
-            <g class="pc" data-seq="4" data-depth="0.9" data-from="330,300,140">
-              <path class="sc-blade" d="M678 450V170c34 22 34 126 0 150z"/>
-            </g>
-            <g class="pc" data-seq="5" data-depth="1.2" data-from="300,-90,-70">
-              <ellipse class="sc-bowl" cx="738" cy="214" rx="23" ry="40"/>
-              <path class="sc-steel" d="M738 254v196"/>
-            </g>
-            <g class="pc" data-seq="6" data-depth="1.5" data-from="-260,-330,0">
-              <circle class="sc-plate" cx="215" cy="92" r="64"/>
-              <circle class="sc-ring" cx="215" cy="92" r="42"/>
-              <ellipse class="sc-bread" cx="215" cy="92" rx="30" ry="19"/>
-            </g>
-            <g class="pc" data-seq="7" data-depth="1.1" data-from="60,-300,200">
-              <path class="sc-gold" d="M432 96h136M568 84h-26a12 12 0 0 0 0 24h26"/>
-              <path class="sc-gold" d="M458 132h116"/>
-              <ellipse class="sc-gold-fill" cx="442" cy="132" rx="22" ry="12"/>
-            </g>
-            <g class="pc" data-seq="8" data-depth="1.6" data-from="320,-260,0">
-              <circle class="sc-glass" cx="712" cy="88" r="50"/>
-              <circle class="sc-water" cx="712" cy="88" r="33"/>
-            </g>
-            <g class="pc" data-seq="9" data-depth="1.9" data-from="420,-40,0">
-              <circle class="sc-glass" cx="812" cy="140" r="41"/>
-              <circle class="sc-wine" cx="812" cy="140" r="26"/>
-            </g>
+            <g class="pc" data-seq="0" data-depth="0.5" data-from="0,560,-40" filter="url(#sh)"><circle cx="500" cy="300" r="150" fill="url(#gPlate)"/><circle cx="500" cy="300" r="142.5" fill="none" stroke="#D9A441" stroke-width="2.7"/><circle cx="500" cy="300" r="103.5" fill="url(#gWell)"/><circle cx="500" cy="300" r="103.5" fill="none" stroke="#000" stroke-opacity="0.1" stroke-width="3"/><path d="M380 255A128.2 128.2 0 0 1 462.5 177.3" fill="none" stroke="#fff" stroke-opacity="0.85" stroke-width="4.5" stroke-linecap="round"/></g>
+            <g class="pc" data-seq="1" data-depth="1.3" data-from="-380,-140,38" filter="url(#sh)"><g filter="url(#linen)"><rect x="150" y="178" width="96" height="274" rx="6" fill="url(#gNapkin)"/></g><rect x="208" y="178" width="38" height="274" rx="6" fill="#000" fill-opacity="0.14"/><path d="M208 178v274" stroke="#7E2416" stroke-width="2"/><rect x="158" y="186" width="80" height="258" rx="3" fill="none" stroke="#FFE7D6" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="5 5"/></g>
+            <g class="pc" data-seq="2" data-depth="1.0" data-from="-160,360,-115" filter="url(#sh-soft)"><g fill="url(#gSteel)"><rect x="263" y="212" width="5.8" height="72" rx="2.9"/><rect x="272.4" y="212" width="5.8" height="72" rx="2.9"/><rect x="281.8" y="212" width="5.8" height="72" rx="2.9"/><rect x="291.2" y="212" width="5.8" height="72" rx="2.9"/><path d="M263 264h34v14c0 26-11 30-11 44h-12c0-14-11-18-11-44z"/><path d="M274 318h12l3 122a9 9 0 0 1-18 0z"/></g><path d="M278 336v80" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="2" stroke-linecap="round"/></g>
+            <g class="pc" data-seq="3" data-depth="0.8" data-from="-470,70,80" filter="url(#sh-soft)"><g fill="url(#gSteel)"><rect x="312" y="168" width="6.8" height="72" rx="3.4"/><rect x="323.1" y="168" width="6.8" height="72" rx="3.4"/><rect x="334.1" y="168" width="6.8" height="72" rx="3.4"/><rect x="345.2" y="168" width="6.8" height="72" rx="3.4"/><path d="M312 220h40v14c0 26-14 30-14 44h-12c0-14-14-18-14-44z"/><path d="M326 274h12l3 166a9 9 0 0 1-18 0z"/></g><path d="M330 292v124" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="2" stroke-linecap="round"/></g>
+            <g class="pc" data-seq="4" data-depth="0.9" data-from="360,330,140" filter="url(#sh-soft)"><path d="M685 168c-34 40-30 136.3-27 170.4h27z" fill="url(#gSteel)"/><path d="M681 182c-26 44-24 127.8-22 154.4" fill="none" stroke="#fff" stroke-opacity="0.6" stroke-width="2"/><rect x="662" y="341.4" width="24" height="110.6" rx="11" fill="url(#gSteelDark)"/><rect x="660" y="338.4" width="28" height="8" rx="3" fill="#59626F"/></g>
+            <g class="pc" data-seq="5" data-depth="1.2" data-from="330,-100,-70" filter="url(#sh-soft)"><ellipse cx="738" cy="219" rx="25" ry="43" fill="url(#gSteel)"/><ellipse cx="738" cy="220" rx="17" ry="33" fill="url(#gBowl)"/><path d="M733 258h10l3 182a8 8 0 0 1-16 0z" fill="url(#gSteel)"/><path d="M737 276v146" fill="none" stroke="#fff" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round"/></g>
+            <g class="pc" data-seq="6" data-depth="1.5" data-from="-300,-360,0" filter="url(#sh)"><circle cx="215" cy="92" r="64" fill="url(#gPlate)"/><circle cx="215" cy="92" r="60.8" fill="none" stroke="#D9A441" stroke-width="1.5"/><circle cx="215" cy="92" r="44.2" fill="url(#gWell)"/><circle cx="215" cy="92" r="44.2" fill="none" stroke="#000" stroke-opacity="0.1" stroke-width="3"/><path d="M163.8 72.8A54.7 54.7 0 0 1 199 39.6" fill="none" stroke="#fff" stroke-opacity="0.85" stroke-width="2" stroke-linecap="round"/><ellipse cx="208" cy="96" rx="30" ry="20" fill="url(#gBread)" filter="url(#sh-soft)"/><path d="M194 90l8 10M205 86l8 12M216 86l7 10" stroke="#8C5A17" stroke-opacity="0.7" stroke-width="2.5" stroke-linecap="round"/><g transform="rotate(-62 243 78)"><rect x="239" y="48" width="9" height="34" rx="4.5" fill="url(#gSteel)"/><rect x="238" y="80" width="11" height="30" rx="5" fill="url(#gSteelDark)"/></g></g>
+            <g class="pc" data-seq="7" data-depth="1.1" data-from="70,-330,200" filter="url(#sh-soft)"><g transform="translate(500 92) rotate(90) scale(0.56)"><g fill="url(#gGold)"><rect x="-15" y="-120" width="5.1" height="72" rx="2.6"/><rect x="-6.7" y="-120" width="5.1" height="72" rx="2.6"/><rect x="1.6" y="-120" width="5.1" height="72" rx="2.6"/><rect x="9.9" y="-120" width="5.1" height="72" rx="2.6"/><path d="M-15 -68h30v14c0 26-9 30-9 44h-12c0-14-9-18-9-44z"/><path d="M-6 -14h12l3 122a9 9 0 0 1-18 0z"/></g><path d="M-2 4v80" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="2" stroke-linecap="round"/></g><g transform="translate(500 132) rotate(-90) scale(0.56)"><ellipse cx="0" cy="-77" rx="25" ry="43" fill="url(#gGold)"/><ellipse cx="0" cy="-76" rx="17" ry="33" fill="url(#gGoldBowl)"/><path d="M-5 -38h10l3 146a8 8 0 0 1-16 0z" fill="url(#gGold)"/><path d="M-1 -20v110" fill="none" stroke="#fff" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round"/></g></g>
+            <g class="pc" data-seq="8" data-depth="1.6" data-from="360,-290,0" filter="url(#sh)"><circle cx="712" cy="88" r="52" fill="#FFFFFF" fill-opacity="0.12" stroke="#E8EEF5" stroke-opacity="0.9" stroke-width="4"/><circle cx="712" cy="88" r="38.5" fill="url(#gWater)"/><ellipse cx="696.4" cy="72.4" rx="10.4" ry="5.2" fill="#fff" fill-opacity="0.6" transform="rotate(-35 696.4 72.4)"/></g>
+            <g class="pc" data-seq="9" data-depth="1.9" data-from="470,-50,0" filter="url(#sh)"><circle cx="818" cy="144" r="43" fill="#FFFFFF" fill-opacity="0.12" stroke="#E8EEF5" stroke-opacity="0.9" stroke-width="4"/><circle cx="818" cy="144" r="31.8" fill="url(#gWine)"/><ellipse cx="805.1" cy="131.1" rx="8.6" ry="4.3" fill="#fff" fill-opacity="0.6" transform="rotate(-35 805.1 131.1)"/></g>
+            <g class="sc-labels" aria-hidden="true"><text x="198" y="484">NAPKIN</text><text x="306" y="484">FORKS</text><text x="708" y="484">KNIFE AND SPOON</text><text x="322" y="98">BREAD</text><text x="500" y="60">DESSERT</text><text x="712" y="166">WATER</text><text x="840" y="214">WINE</text></g>
           </svg>
           </div>
           <div class="scene-foot" aria-hidden="true">
@@ -111,6 +137,10 @@
     <div class="marquee">
       <ul class="marquee-track"><li>Bread on your left</li><li>Drinks on your right</li><li>Work from the outside in</li><li>Napkin on your lap</li><li>Phone off the table</li><li>Let your guest order first</li><li>Thank your server</li></ul>
       <ul class="marquee-track" aria-hidden="true"><li>Bread on your left</li><li>Drinks on your right</li><li>Work from the outside in</li><li>Napkin on your lap</li><li>Phone off the table</li><li>Let your guest order first</li><li>Thank your server</li></ul>
+    </div>
+    <div class="marquee marquee-alt">
+      <ul class="marquee-track"><li>Carreño, 1853</li><li>No elbows on the table</li><li>Never the knife to your mouth</li><li>Neither too fast nor too slow</li><li>Never a harsh word to a server</li><li>Offer a dish only once</li><li>Bread is broken by hand</li></ul>
+      <ul class="marquee-track" aria-hidden="true"><li>Carreño, 1853</li><li>No elbows on the table</li><li>Never the knife to your mouth</li><li>Neither too fast nor too slow</li><li>Never a harsh word to a server</li><li>Offer a dish only once</li><li>Bread is broken by hand</li></ul>
     </div>
 
     <div class="wrap">

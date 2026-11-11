@@ -33,6 +33,8 @@
   --steel: #DCE3EC;        /* cutlery in the scene */
   --water: #9CCBE0;
   --pulse: rgba(240, 180, 41, 0.7);
+  --stage-deep: #0A1120;   /* vignette at the edges of the stage */
+  --candle: rgba(240, 180, 41, 0.22); /* light that follows the pointer */
 
   /* ---- Fonts ---- */
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;

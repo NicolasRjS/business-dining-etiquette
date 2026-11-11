@@ -728,3 +728,76 @@ tbody th { font-weight: var(--fw-semibold); }
   .marquee-track[aria-hidden="true"] { display: none; }
   .page-intro::after, .game-start .btn-gold, .hotspot { animation: none !important; }
 }
+
+/* ==========================================================================
+   Stage, round two: the table fills the screen, candlelight follows the
+   pointer, and the place setting uses the same detailed artwork.
+   ========================================================================== */
+.scene-pin { position: relative; isolation: isolate; }
+.scene-pin::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(38rem circle at var(--mx, 50%) var(--my, 45%), var(--candle), transparent 70%),
+    radial-gradient(120% 90% at 50% 40%, transparent 40%, var(--stage-deep) 100%);
+  pointer-events: none;
+}
+.scene.is-live .scene-inner { position: relative; width: 100%; }
+.scene.is-live .scene-copy { position: relative; z-index: 2; transform-origin: left top; will-change: transform, opacity; }
+.scene.is-live .scene-table { position: absolute; inset: var(--sp-7) 0 var(--sp-8); z-index: 1; min-height: 0; }
+.scene.is-live .scene-foot { position: absolute; left: var(--gutter); right: var(--gutter); bottom: var(--sp-5); z-index: 2; }
+.scene:not(.is-live) .scene-table { min-height: 22rem; }
+.scene h1 { animation: headline-in 0.9s var(--ease) both; }
+.scene h1 em { display: inline-block; animation: headline-in 0.9s var(--ease) 0.25s both; }
+.scene .lede { animation: headline-in 0.9s var(--ease) 0.45s both; }
+@keyframes headline-in { from { opacity: 0; transform: translateY(2rem) rotate(1.5deg); } to { opacity: 1; transform: none; } }
+.sc-labels { opacity: 0; }
+.scene:not(.is-live) .sc-labels { opacity: 1; }
+.sc-labels text { fill: var(--gold); font-family: var(--font-body); font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-anchor: middle; }
+.scene-caption { font-size: var(--fs-xl); text-shadow: 0 2px 12px var(--stage-deep); }
+@media (max-width: 40rem) {
+  .scene.is-live .scene-table { inset: 30% -14% 22%; }
+  .sc-labels { display: none; }
+  .scene-caption { font-size: var(--fs-lg); }
+}
+
+/* Second marquee runs the other way, in gold */
+.marquee-alt { background: var(--gold); color: var(--ink); }
+.marquee-alt .marquee-track { animation-direction: reverse; animation-duration: 44s; }
+.marquee-alt .marquee-track li::after { color: var(--accent); }
+.marquee-alt .marquee-track li:first-child { font-style: italic; }
+
+/* Place setting on the same dark stage */
+.ps-stage { background: var(--stage); border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-md); }
+.ps-art [data-art] { transform-box: fill-box; transform-origin: center; }
+.ps .hotspot { --hotspot: 2.25rem; font-size: var(--fs-xs); background: var(--gold); color: var(--ink); border-color: var(--stage); }
+.ps .hotspot:hover { background: var(--paper); }
+.ps .hotspot[aria-pressed="true"] { background: var(--accent-bright); color: var(--on-accent); border-color: var(--paper); }
+.ps .hotspot:focus-visible { outline-color: var(--paper); }
+.ps.is-interactive .ps-art:has(.is-active) [data-art]:not(.is-active) { opacity: 0.3; }
+.ps.is-interactive .ps-art:has(.is-active) .sc-mat { opacity: 0.6; }
+.ps-panel { border-color: var(--ink); border-width: var(--bw-thick); }
+.ps-list li:not([hidden]) { animation: caption-in var(--dur-slow) var(--ease); }
+
+/* Louder section rhythm */
+.section-head h2 { position: relative; display: inline-block; }
+.section-head h2::after { content: ""; display: block; width: 40%; height: var(--sp-2); margin-top: var(--sp-2); background: var(--gold); border-radius: var(--r-pill); transform-origin: left; }
+.reveal .section-head h2::after, .section-head.reveal h2::after { transform: scaleX(0); }
+.section-head.is-in h2::after { transform: scaleX(1); transition: transform var(--dur-reveal) var(--ease) 200ms; }
+.side-box { border-color: var(--ink); border-width: var(--bw-thick); box-shadow: var(--sp-2) var(--sp-2) 0 var(--gold); transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
+.side-box:hover { transform: translate(calc(var(--sp-1) * -1), calc(var(--sp-1) * -1)); box-shadow: var(--sp-3) var(--sp-3) 0 var(--accent); }
+.quote { border-color: var(--ink); border-width: var(--bw-thick); box-shadow: var(--sp-2) var(--sp-2) 0 var(--accent); }
+.quote blockquote { font-size: var(--fs-lg); font-style: italic; }
+.note { border-color: var(--ink); }
+.tag { border-width: var(--bw-thick); }
+.tag-same { background: var(--good-bg); }
+.tag-dated { background: var(--bad-bg); }
+tbody tr { transition: background-color var(--dur-fast) var(--ease); }
+tbody tr:hover { background: var(--paper-deep); }
+.next-step a { font-family: var(--font-display); font-size: var(--fs-lg); }
+
+@media (prefers-reduced-motion: reduce) {
+  .scene h1, .scene h1 em, .scene .lede, .ps-list li { animation: none !important; }
+}

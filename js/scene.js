@@ -11,6 +11,9 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var caption = scene.querySelector('[data-scene-caption]');
   var meter = scene.querySelector('[data-scene-meter]');
+  var copy = scene.querySelector('.scene-copy');
+  var mat = scene.querySelector('.sc-mat');
+  var labels = scene.querySelector('.sc-labels');
   var pieces = Array.prototype.map.call(scene.querySelectorAll('.pc'), function (el) {
     var from = el.getAttribute('data-from').split(',').map(Number);
     return {
@@ -69,8 +72,22 @@
       var y = p.dy * left + driftY * p.depth * 12;
       var r = p.rot * left + driftX * p.depth * 1.5;
       p.el.style.transform = 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px) rotate(' + r.toFixed(2) + 'deg)';
-      p.el.style.opacity = (0.25 + 0.75 * t).toFixed(2);
+      p.el.style.opacity = (0.3 + 0.7 * t).toFixed(2);
     }
+
+    /* The headline steps aside so the table can take the whole stage. */
+    if (copy) {
+      var gone = clamp((progress - 0.04) / 0.16);
+      copy.style.opacity = (1 - gone).toFixed(2);
+      copy.style.transform = 'translateY(' + (-60 * gone).toFixed(1) + 'px) scale(' + (1 - 0.06 * gone).toFixed(3) + ')';
+      copy.style.pointerEvents = gone > 0.9 ? 'none' : '';
+    }
+    if (mat) { mat.style.opacity = (0.25 + 0.75 * clamp(progress / 0.2)).toFixed(2); }
+    if (labels) { labels.style.opacity = clamp((progress - 0.93) / 0.06).toFixed(2); }
+
+    /* Candlelight follows the pointer. */
+    scene.style.setProperty('--mx', (50 + driftX * 50).toFixed(1) + '%');
+    scene.style.setProperty('--my', (50 + driftY * 50).toFixed(1) + '%');
 
     var text = steps[0][1];
     for (var s = 0; s < steps.length; s++) {

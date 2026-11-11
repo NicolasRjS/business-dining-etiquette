@@ -8,8 +8,8 @@
 
   var selector = [
     '.section-head', '.rules li', '.paths li', '.play-cta',
-    '.prose > h2', '.prose > h3', '.prose > p', '.prose > ul', '.prose > .note', '.prose > .quote', '.prose > .table-scroll',
-    '.side-box', '.ps', '.section > .table-scroll', '.section > .note',
+    '.prose > h2', '.prose > h3', '.prose > p', '.prose > ul', '.prose > .note', '.prose > .quote',
+    '.side-box', '.section > .note',
     '.refs li', '.link-list li', '.next-step'
   ].join(',');
 
