@@ -439,3 +439,18 @@ tbody th { font-weight: var(--fw-semibold); }
 /* ---- Next step link at the end of a page ---- */
 .next-step { padding-block: var(--sp-6) var(--sp-0); border-top: var(--bw) solid var(--rule); font-weight: var(--fw-semibold); }
 .next-step p { margin: var(--sp-0); }
+
+/* ---- Checklist (side box) ---- */
+.checklist { list-style: none; padding-left: var(--sp-0); }
+.side-box .checklist { padding-left: var(--sp-0); }
+.checklist li { position: relative; padding-left: var(--sp-5); margin-bottom: var(--sp-3); }
+.checklist li::before {
+  content: "";
+  position: absolute;
+  left: var(--sp-0);
+  top: 0.3em;
+  width: var(--sp-3);
+  height: var(--sp-3);
+  border: var(--bw-thick) solid var(--accent);
+  border-radius: var(--r-sm);
+}
