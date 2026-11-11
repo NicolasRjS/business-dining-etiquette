@@ -11,8 +11,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/site.css">
+  <script src="js/scene.js" defer></script>
+  <script src="js/motion.js" defer></script>
 </head>
-<body data-page="home">
+<body data-page="index">
   <!-- SHARED HEADER START -->
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
@@ -42,36 +44,76 @@
   </header>
   <!-- SHARED HEADER END -->
 
-  <main id="main">
-    <div class="wrap">
+    <main id="main">
 
-      <section class="hero" aria-labelledby="page-title">
-        <div>
-          <p class="eyebrow">A guide for University of Arizona students</p>
-          <h1 id="page-title">Get through your first business meal without guessing.</h1>
-          <p class="lede">This site explains what to do before and during a business lunch or dinner, from picking the restaurant to thanking the server. It is written for students who have never been to one.</p>
-        </div>
-        <figure class="hero-art">
-          <svg viewBox="0 0 360 260" role="img" aria-labelledby="hero-art-title">
-            <title id="hero-art-title">A place setting seen from above: a dinner plate with forks on the left, a knife and spoon on the right, a bread plate at the top left and two glasses at the top right.</title>
-            <circle class="art-fill" cx="62" cy="56" r="30"/>
-            <circle class="art-line" cx="62" cy="56" r="18"/>
-            <circle class="art-fill" cx="282" cy="50" r="22"/>
-            <circle class="art-line" cx="282" cy="50" r="13"/>
-            <circle class="art-fill" cx="322" cy="86" r="16"/>
-            <circle class="art-line" cx="322" cy="86" r="9"/>
-            <path class="art-accent-line" d="M150 48h66"/>
-            <ellipse class="art-accent" cx="142" cy="48" rx="11" ry="7"/>
-            <circle class="art-fill" cx="180" cy="154" r="78"/>
-            <circle class="art-line" cx="180" cy="154" r="54"/>
-            <path class="art-line" d="M52 112v118M44 112v24a8 8 0 0 0 16 0v-24"/>
-            <path class="art-line" d="M80 100v130M72 100v26a8 8 0 0 0 16 0v-26"/>
-            <path class="art-line" d="M280 230V100c13 9 13 46 0 58"/>
-            <ellipse class="art-fill" cx="312" cy="124" rx="10" ry="17"/>
-            <path class="art-line" d="M312 141v89"/>
+    <section class="scene" data-scene aria-labelledby="page-title">
+      <div class="scene-pin">
+        <div class="wrap scene-inner">
+          <div class="scene-copy">
+            <div>
+              <p class="eyebrow">A guide for University of Arizona students</p>
+              <h1 id="page-title">Get through your first business meal <em>without guessing.</em></h1>
+            </div>
+            <p class="lede">This site explains what to do before and during a business lunch or dinner, from picking the restaurant to thanking the server. It is written for students who have never been to one.</p>
+          </div>
+          <div class="scene-table">
+            <svg class="scene-art" viewBox="0 0 1000 520" role="img" aria-labelledby="scene-title">
+            <title id="scene-title">A place setting that arranges itself: dinner plate in the center, napkin and two forks on the left, knife and spoon on the right, bread plate at the upper left, dessert fork and spoon above the plate, water and wine glasses at the upper right.</title>
+            <g class="pc" data-seq="0" data-depth="0.5" data-from="0,520,-40">
+              <circle class="sc-plate" cx="500" cy="300" r="150"/>
+              <circle class="sc-ring" cx="500" cy="300" r="104"/>
+            </g>
+            <g class="pc" data-seq="1" data-depth="1.3" data-from="-330,-120,38">
+              <rect class="sc-napkin" x="150" y="180" width="92" height="270" rx="6"/>
+              <path class="sc-fold" d="M212 180v270"/>
+            </g>
+            <g class="pc" data-seq="2" data-depth="1.0" data-from="-140,330,-115">
+              <path class="sc-steel" d="M285 215v235M269 215v48a16 16 0 0 0 32 0v-48"/>
+            </g>
+            <g class="pc" data-seq="3" data-depth="0.8" data-from="-420,60,80">
+              <path class="sc-steel" d="M330 170v280M312 170v58a18 18 0 0 0 36 0v-58"/>
+            </g>
+            <g class="pc" data-seq="4" data-depth="0.9" data-from="330,300,140">
+              <path class="sc-blade" d="M678 450V170c34 22 34 126 0 150z"/>
+            </g>
+            <g class="pc" data-seq="5" data-depth="1.2" data-from="300,-90,-70">
+              <ellipse class="sc-bowl" cx="738" cy="214" rx="23" ry="40"/>
+              <path class="sc-steel" d="M738 254v196"/>
+            </g>
+            <g class="pc" data-seq="6" data-depth="1.5" data-from="-260,-330,0">
+              <circle class="sc-plate" cx="215" cy="92" r="64"/>
+              <circle class="sc-ring" cx="215" cy="92" r="42"/>
+              <ellipse class="sc-bread" cx="215" cy="92" rx="30" ry="19"/>
+            </g>
+            <g class="pc" data-seq="7" data-depth="1.1" data-from="60,-300,200">
+              <path class="sc-gold" d="M432 96h136M568 84h-26a12 12 0 0 0 0 24h26"/>
+              <path class="sc-gold" d="M458 132h116"/>
+              <ellipse class="sc-gold-fill" cx="442" cy="132" rx="22" ry="12"/>
+            </g>
+            <g class="pc" data-seq="8" data-depth="1.6" data-from="320,-260,0">
+              <circle class="sc-glass" cx="712" cy="88" r="50"/>
+              <circle class="sc-water" cx="712" cy="88" r="33"/>
+            </g>
+            <g class="pc" data-seq="9" data-depth="1.9" data-from="420,-40,0">
+              <circle class="sc-glass" cx="812" cy="140" r="41"/>
+              <circle class="sc-wine" cx="812" cy="140" r="26"/>
+            </g>
           </svg>
-        </figure>
-      </section>
+          </div>
+          <div class="scene-foot" aria-hidden="true">
+            <p class="scene-caption" data-scene-caption></p>
+            <div class="scene-meter"><span data-scene-meter></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee">
+      <ul class="marquee-track"><li>Bread on your left</li><li>Drinks on your right</li><li>Work from the outside in</li><li>Napkin on your lap</li><li>Phone off the table</li><li>Let your guest order first</li><li>Thank your server</li></ul>
+      <ul class="marquee-track" aria-hidden="true"><li>Bread on your left</li><li>Drinks on your right</li><li>Work from the outside in</li><li>Napkin on your lap</li><li>Phone off the table</li><li>Let your guest order first</li><li>Thank your server</li></ul>
+    </div>
+
+    <div class="wrap">
 
       <section class="section" aria-labelledby="rules-title">
         <div class="section-head">
@@ -170,7 +212,7 @@
             </a>
           </li>
         </ol>
-        <p>Finished reading? <a href="quiz.html">Test yourself with the 10-question quiz</a>, or check the <a href="references.html">sources behind this guide</a>.</p>
+        <p class="play-cta">Finished reading? <a href="quiz.html">Play Dinner Service, the 10-question quiz game</a>, or check the <a href="references.html">sources behind this guide</a>.</p>
       </section>
 
     </div>

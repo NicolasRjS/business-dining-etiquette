@@ -22,6 +22,18 @@
   --bad-bg: #F6E2DC;
   --focus: #1B2A41;        /* focus ring */
 
+  /* ---- Color: dark stage (hero scene, page intros, quiz game) ---- */
+  --stage: #121C30;        /* deep navy background */
+  --stage-soft: #1F2D49;   /* panels on the stage */
+  --stage-line: #4A5B7D;   /* borders on the stage */
+  --on-ink-soft: #C5CCDA;  /* secondary text on the stage (10:1) */
+  --gold: #F0B429;         /* loud second accent, for dark backgrounds */
+  --accent-bright: #E4573D;/* brick, brightened for dark backgrounds */
+  --good-bright: #5FBF8A;
+  --steel: #DCE3EC;        /* cutlery in the scene */
+  --water: #9CCBE0;
+  --pulse: rgba(240, 180, 41, 0.7);
+
   /* ---- Fonts ---- */
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-body: "Source Sans 3", Verdana, "Trebuchet MS", sans-serif;
@@ -35,6 +47,8 @@
   --fs-xl: 2rem;        /* 32px h2 */
   --fs-2xl: clamp(2.25rem, 1.4rem + 3.6vw, 3.75rem); /* h1 */
   --fs-numeral: 2.5rem; /* big list numerals */
+  --fs-hero: clamp(2.5rem, 1rem + 6.2vw, 5.5rem);        /* stage headlines */
+  --fs-2xl-soft: clamp(1.75rem, 1.2rem + 2.2vw, 2.75rem); /* section headings */
 
   --lh-body: 1.65;
   --lh-snug: 1.35;
@@ -86,6 +100,8 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --dur-fast: 200ms;
   --dur: 300ms;
+  --dur-slow: 500ms;
+  --dur-reveal: 700ms;
   --press: 0.97;
 }
 
