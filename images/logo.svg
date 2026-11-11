@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <title>Business Dining Etiquette mark: a plate with a fork and a knife</title>
+  <g fill="none" stroke="#A8412F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="10"/>
+    <circle cx="24" cy="24" r="5.5"/>
+    <path d="M8 10v28M5 10v7a3 3 0 0 0 6 0v-7"/>
+    <path d="M40 38V10c4 3 4 12 0 15"/>
+  </g>
+</svg>

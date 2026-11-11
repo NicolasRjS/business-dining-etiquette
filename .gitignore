@@ -1,0 +1,16 @@
+# Local context for Claude Code (not part of the website)
+CLAUDE.md
+content/
+
+# Claude Code skills/config
+.claude/
+
+# Secrets
+.openai-key
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/

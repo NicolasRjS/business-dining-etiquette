@@ -1,0 +1,102 @@
+/* ==========================================================================
+   tokens.css
+   The single place for visual decisions. Change values here to restyle
+   the whole site. site.css may only use these variables.
+   ========================================================================== */
+
+:root {
+  /* ---- Color: one base (ink), one accent (brick), warm neutrals ---- */
+  --paper: #F7F2E8;        /* page background */
+  --paper-deep: #EFE7D6;   /* tinted bands, table headers */
+  --surface: #FFFDF8;      /* panels that sit on the paper */
+  --ink: #1B2A41;          /* text, headings (13.5:1 on paper) */
+  --ink-soft: #47536A;     /* secondary text (6.9:1 on paper) */
+  --accent: #A8412F;       /* links, key marks (5.4:1 on paper) */
+  --accent-deep: #7E2E20;  /* hover and visited links */
+  --rule: #D8CDB8;         /* hairlines and borders */
+  --on-ink: #F7F2E8;       /* text on ink backgrounds */
+  --on-accent: #FFFDF8;    /* text on accent backgrounds */
+  --good: #2C6447;         /* correct answer */
+  --good-bg: #E4EFE6;
+  --bad: #8F2F20;          /* wrong answer */
+  --bad-bg: #F6E2DC;
+  --focus: #1B2A41;        /* focus ring */
+
+  /* ---- Fonts ---- */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3", Verdana, "Trebuchet MS", sans-serif;
+
+  /* ---- Type scale (rem) ---- */
+  --fs-xs: 0.8125rem;   /* 13px */
+  --fs-sm: 0.9375rem;   /* 15px */
+  --fs-base: 1.125rem;  /* 18px body */
+  --fs-md: 1.3125rem;   /* 21px lede */
+  --fs-lg: 1.5rem;      /* 24px h3 */
+  --fs-xl: 2rem;        /* 32px h2 */
+  --fs-2xl: clamp(2.25rem, 1.4rem + 3.6vw, 3.75rem); /* h1 */
+  --fs-numeral: 2.5rem; /* big list numerals */
+
+  --lh-body: 1.65;
+  --lh-snug: 1.35;
+  --lh-tight: 1.1;
+
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-display: 560;
+
+  --tracking-label: 0.08em;
+
+  /* ---- Spacing scale ---- */
+  --sp-0: 0;
+  --sp-1: 0.25rem;  /* 4 */
+  --sp-2: 0.5rem;   /* 8 */
+  --sp-3: 0.75rem;  /* 12 */
+  --sp-4: 1rem;     /* 16 */
+  --sp-5: 1.5rem;   /* 24 */
+  --sp-6: 2rem;     /* 32 */
+  --sp-7: 3rem;     /* 48 */
+  --sp-8: 4rem;     /* 64 */
+  --sp-9: 6rem;     /* 96 */
+
+  /* ---- Layout ---- */
+  --wrap: 70rem;         /* page container */
+  --measure: 66ch;       /* comfortable line length */
+  --gutter: var(--sp-5); /* side padding */
+  --sidebar: 20rem;
+  --hotspot: 2.75rem;    /* touch target for interactive markers */
+
+  /* ---- Radii ---- */
+  --r-sm: 0.25rem;
+  --r-md: 0.5rem;
+  --r-lg: 1rem;
+  --r-pill: 999px;
+
+  /* ---- Borders ---- */
+  --bw: 1px;
+  --bw-thick: 2px;
+  --focus-w: 3px;
+  --focus-offset: 3px;
+
+  /* ---- Shadows (soft, no glow) ---- */
+  --shadow-sm: 0 1px 2px rgba(27, 42, 65, 0.08);
+  --shadow-md: 0 8px 24px rgba(27, 42, 65, 0.10);
+
+  /* ---- Motion ---- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 200ms;
+  --dur: 300ms;
+  --press: 0.97;
+}
+
+@media (max-width: 40rem) {
+  :root {
+    --fs-base: 1.0625rem; /* 17px body on phones */
+    --fs-md: 1.1875rem;
+    --fs-xl: 1.625rem;
+    --fs-lg: 1.3125rem;
+    --gutter: var(--sp-4);
+    --sp-8: 3rem;
+    --sp-9: 4rem;
+  }
+}
