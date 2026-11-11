@@ -489,3 +489,17 @@ tbody th { font-weight: var(--fw-semibold); }
 .answer-key { max-width: 46rem; margin-top: var(--sp-5); }
 .answer-key summary { cursor: pointer; font-weight: var(--fw-semibold); color: var(--accent); }
 .answer-key ol { margin-top: var(--sp-3); }
+
+/* ---- References ---- */
+.refs { max-width: 50rem; margin: var(--sp-0); padding-left: var(--sp-0); list-style: none; counter-reset: ref; }
+.refs li { counter-increment: ref; position: relative; margin: var(--sp-0); padding: var(--sp-4) var(--sp-0) var(--sp-4) var(--sp-7); border-top: var(--bw) solid var(--rule); }
+.refs li::before { content: "[" counter(ref) "]"; position: absolute; left: var(--sp-0); top: var(--sp-4); font-weight: var(--fw-bold); color: var(--accent); }
+.refs li:target { background: var(--paper-deep); }
+.ref { margin-bottom: var(--sp-2); padding-left: var(--sp-5); text-indent: calc(var(--sp-5) * -1); }
+.ref a { overflow-wrap: anywhere; }
+.ref-note { margin: var(--sp-0); font-size: var(--fs-sm); color: var(--ink-soft); }
+
+.link-list { max-width: 50rem; margin: var(--sp-0); padding-left: var(--sp-0); list-style: none; }
+.link-list li { margin: var(--sp-0); padding-block: var(--sp-4); border-top: var(--bw) solid var(--rule); }
+.link-list a { font-weight: var(--fw-semibold); }
+.link-list span { display: block; font-size: var(--fs-sm); color: var(--ink-soft); }
