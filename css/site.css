@@ -801,3 +801,34 @@ tbody tr:hover { background: var(--paper-deep); }
 @media (prefers-reduced-motion: reduce) {
   .scene h1, .scene h1 em, .scene .lede, .ps-list li { animation: none !important; }
 }
+
+/* ---- Set the Table: game mode of the place setting ---- */
+.ps-modes { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-bottom: var(--sp-4); }
+.ps-game[hidden] { display: none; }
+.ps.is-game .ps-list, .ps.is-game .ps-hint, .ps.is-game .ps-controls { display: none; }
+.ps-game h3 { margin-bottom: var(--sp-2); }
+.ps-game-how { color: var(--ink-soft); }
+.chips { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-bottom: var(--sp-4); min-height: var(--hotspot); }
+.chip {
+  padding: var(--sp-2) var(--sp-4);
+  background: var(--paper);
+  color: var(--ink);
+  border: var(--bw-thick) solid var(--ink);
+  border-radius: var(--r-pill);
+  font: inherit;
+  font-weight: var(--fw-semibold);
+  cursor: grab;
+  transition: transform var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease);
+}
+.chip:hover { transform: translateY(-0.15rem) rotate(-1.5deg); background: var(--paper-deep); }
+.chip:active { cursor: grabbing; }
+.chip[aria-pressed="true"] { background: var(--gold); transform: scale(1.06); }
+.ps-game-status { min-height: 3lh; margin-bottom: var(--sp-3); font-weight: var(--fw-semibold); }
+.ps-game-score { font-size: var(--fs-sm); color: var(--ink-soft); }
+
+.ps.is-game .ps-art [data-art] { opacity: 0.06; }
+.ps.is-game .ps-art [data-art].is-placed { opacity: 1; animation: pop var(--dur-slow) var(--ease); }
+.ps.is-game .hotspot { animation: none; background: transparent; color: var(--gold); border: var(--bw-thick) dashed var(--gold); }
+.ps.is-game .hotspot:hover, .ps.is-game .hotspot.is-drop { background: var(--gold); color: var(--ink); transform: scale(1.25); }
+.ps.is-game .hotspot.is-done { background: var(--good-bright); color: var(--ink); border: var(--bw-thick) solid var(--stage); opacity: 1; transform: none; cursor: default; }
+.ps.is-game .hotspot.is-no { animation: shake 0.45s var(--ease); border-color: var(--accent-bright); color: var(--accent-bright); }
