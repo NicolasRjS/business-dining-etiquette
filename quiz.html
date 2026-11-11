@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz | Business Dining Etiquette</title>
+  <meta name="description" content="A 10-question quiz on business dining etiquette: planning, the place setting, conduct at the table and the rules of Carreño.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/site.css">
+  <script src="js/quiz.js" defer></script>
+</head>
+<body data-page="quiz">
+  <!-- SHARED HEADER START -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+          <g class="art-accent-line">
+            <circle cx="24" cy="24" r="10"/>
+            <circle cx="24" cy="24" r="5.5"/>
+            <path d="M8 10v28M5 10v7a3 3 0 0 0 6 0v-7"/>
+            <path d="M40 38V10c4 3 4 12 0 15"/>
+          </g>
+        </svg>
+        <span>Business Dining Etiquette</span>
+      </a>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="plan-ahead.html">Plan Ahead</a></li>
+          <li><a href="at-the-table.html">At the Table</a></li>
+          <li><a href="carreno.html">Carreño</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- SHARED HEADER END -->
+
+    <main id="main">
+    <div class="wrap">
+
+      <header class="page-intro">
+        <p class="eyebrow">Check what you learned</p>
+        <h1>Quiz</h1>
+        <p class="lede">Ten questions about planning the meal, reading the place setting, behaving at the table and the rules of Carreño. Every answer is explained somewhere on this site.</p>
+      </header>
+
+      <section class="section" aria-labelledby="quiz-title">
+        <h2 id="quiz-title">The 10 questions</h2>
+        <form class="quiz" data-quiz novalidate>
+          <ol class="q-list">
+            <li class="q" data-answer="b">
+              <fieldset>
+                <legend>You are hosting a business dinner. Which restaurant is the safest choice?</legend>
+                <ol class="q-options" type="a">
+                  <li><label class="q-option"><input type="radio" name="q1" value="a"> <span>A new place everyone is talking about, which you have not tried yet</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q1" value="b"> <span>A quiet restaurant you already know that is easy for your guest to reach</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q1" value="c"> <span>A lively theme restaurant, to break the ice</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q1" value="d"> <span>The most expensive restaurant in town, to impress</span></label></li>
+                </ol>
+              </fieldset>
+              <p class="q-feedback" hidden><strong class="q-result"></strong> Choose a place where you already know the menu and the service, where you can talk, and that is convenient for your guest. See <a href="plan-ahead.html#choose-place">Choose the mood and the place</a>.</p>
+            </li>
+            <li class="q" data-answer="c">
+              <fieldset>
+                <legend>Your guest orders first and picks a mid-priced dish. What should you order?</legend>
+                <ol class="q-options" type="a">
+                  <li><label class="q-option"><input type="radio" name="q2" value="a"> <span>The most expensive dish, to show confidence</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q2" value="b"> <span>Only a drink, to keep the bill low</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q2" value="c"> <span>A dish in a similar price range</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q2" value="d"> <span>Exactly the same dish, always</span></label></li>
+                </ol>
+              </fieldset>
+              <p class="q-feedback" hidden><strong class="q-result"></strong> Letting the guest order first and then matching the price range keeps everyone comfortable. See <a href="plan-ahead.html#price">The price-matching rule</a>.</p>
+            </li>
+            <li class="q" data-answer="a">
+              <fieldset>
+                <legend>There is a small plate on each side of you. Which bread plate is yours?</legend>
+                <ol class="q-options" type="a">
+                  <li><label class="q-option"><input type="radio" name="q3" value="a"> <span>The one at your upper left</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q3" value="b"> <span>The one at your upper right</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q3" value="c"> <span>Whichever is closer to your hand</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q3" value="d"> <span>Neither. Bread goes on the dinner plate</span></label></li>
+                </ol>
+              </fieldset>
+              <p class="q-feedback" hidden><strong class="q-result"></strong> Solids on the left, liquids on the right: your bread plate is at the upper left and your glasses at the upper right. See <a href="at-the-table.html#place-setting">the place setting</a>.</p>
+            </li>
+            <li class="q" data-answer="d">
+              <fieldset>
+                <legend>You find two forks to the left of your plate. Which one do you use for the first course?</legend>
+                <ol class="q-options" type="a">
+                  <li><label class="q-option"><input type="radio" name="q4" value="a"> <span>The one closest to the plate</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q4" value="b"> <span>The larger one</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q4" value="c"> <span>The one lying above the plate</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q4" value="d"> <span>The one farthest from the plate</span></label></li>
+                </ol>
+              </fieldset>
+              <p class="q-feedback" hidden><strong class="q-result"></strong> Utensils are used from the outside in, so you start with the outer fork. The piece above the plate is for dessert. See <a href="at-the-table.html#place-setting">the place setting</a>.</p>
+            </li>
+            <li class="q" data-answer="b">
+              <fieldset>
+                <legend>You need to leave the table for a moment during the meal. Where does your napkin go?</legend>
+                <ol class="q-options" type="a">
+                  <li><label class="q-option"><input type="radio" name="q5" value="a"> <span>On the table, next to your plate</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q5" value="b"> <span>On your chair</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q5" value="c"> <span>On top of your plate</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q5" value="d"> <span>In your pocket</span></label></li>
+                </ol>
+              </fieldset>
+              <p class="q-feedback" hidden><strong class="q-result"></strong> A napkin on the chair shows that you are coming back. It returns to the table only when the meal is over. See <a href="at-the-table.html#napkin">Napkin</a>.</p>
+            </li>
+            <li class="q" data-answer="c">
+              <fieldset>
+                <legend>What should you do with your phone during a business meal?</legend>
+                <ol class="q-options" type="a">
+                  <li><label class="q-option"><input type="radio" name="q6" value="a"> <span>Leave it face down on the table</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q6" value="b"> <span>Keep it on the table with the sound on, in case of an urgent call</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q6" value="c"> <span>Keep it off the table and silent</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q6" value="d"> <span>Hold it in your hand under the table</span></label></li>
+                </ol>
+              </fieldset>
+              <p class="q-feedback" hidden><strong class="q-result"></strong> The phone stays off the table and should never ring. See <a href="at-the-table.html#phone">Phone</a>.</p>
+            </li>
+            <li class="q" data-answer="a">
+              <fieldset>
+                <legend>When is the best moment to bring up your main business points?</legend>
+                <ol class="q-options" type="a">
+                  <li><label class="q-option"><input type="radio" name="q7" value="a"> <span>After some small talk, but before dessert</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q7" value="b"> <span>As soon as everyone sits down</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q7" value="c"> <span>Only while dessert is being served</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q7" value="d"> <span>Never. Business is not discussed at a meal</span></label></li>
+                </ol>
+              </fieldset>
+              <p class="q-feedback" hidden><strong class="q-result"></strong> Start with small talk and get to know the other person, but do not wait until dessert for the serious points. See <a href="at-the-table.html#conversation">Conversation and when to talk business</a>.</p>
+            </li>
+            <li class="q" data-answer="d">
+              <fieldset>
+                <legend>According to Carreño, what is the only purpose of the napkin?</legend>
+                <ol class="q-options" type="a">
+                  <li><label class="q-option"><input type="radio" name="q8" value="a"> <span>Protecting your clothes</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q8" value="b"> <span>Covering the bread</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q8" value="c"> <span>Cleaning your cutlery</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q8" value="d"> <span>Wiping your lips</span></label></li>
+                </ol>
+              </fieldset>
+              <p class="q-feedback" hidden><strong class="q-result"></strong> Carreño says the napkin has no other purpose than wiping the lips. See <a href="carreno.html#on-the-table">What you will find on the table</a>.</p>
+            </li>
+            <li class="q" data-answer="b">
+              <fieldset>
+                <legend>A server makes a serious mistake with your order. What does Carreño tell you to do?</legend>
+                <ol class="q-options" type="a">
+                  <li><label class="q-option"><input type="radio" name="q9" value="a"> <span>Correct them firmly, so that they learn</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q9" value="b"> <span>Never speak to them harshly or scold them</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q9" value="c"> <span>Ask your host to complain for you</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q9" value="d"> <span>Stand up and leave the table</span></label></li>
+                </ol>
+              </fieldset>
+              <p class="q-feedback" hidden><strong class="q-result"></strong> He writes that we must never speak to servers in a commanding and harsh tone, however serious the mistake. See <a href="carreno.html#servers">How to treat servers</a>.</p>
+            </li>
+            <li class="q" data-answer="c">
+              <fieldset>
+                <legend>Which of these rules from Carreño is considered dated today?</legend>
+                <ol class="q-options" type="a">
+                  <li><label class="q-option"><input type="radio" name="q10" value="a"> <span>Keeping the bread on your left</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q10" value="b"> <span>Eating neither too fast nor too slowly</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q10" value="c"> <span>Serving ladies the best pieces, in smaller amounts</span></label></li>
+                  <li><label class="q-option"><input type="radio" name="q10" value="d"> <span>Thanking the person who serves you</span></label></li>
+                </ol>
+              </fieldset>
+              <p class="q-feedback" hidden><strong class="q-result"></strong> This rule reflects the gender roles of the nineteenth century. Today every guest receives the same attention. See <a href="carreno.html#then-and-now">Carreño vs. today</a>.</p>
+            </li>
+          </ol>
+          <div class="quiz-actions" hidden>
+            <button type="submit" class="btn">Check my answers</button>
+            <button type="reset" class="btn btn-quiet">Start over</button>
+          </div>
+          <div class="quiz-score" role="status" aria-live="polite" tabindex="-1" hidden></div>
+        </form>
+
+        <details class="answer-key">
+          <summary>Show the answer key</summary>
+          <ol>
+            <li>b) A quiet restaurant you already know that is easy for your guest to reach</li>
+            <li>c) A dish in a similar price range</li>
+            <li>a) The one at your upper left</li>
+            <li>d) The one farthest from the plate</li>
+            <li>b) On your chair</li>
+            <li>c) Keep it off the table and silent</li>
+            <li>a) After some small talk, but before dessert</li>
+            <li>d) Wiping your lips</li>
+            <li>b) Never speak to them harshly or scold them</li>
+            <li>c) Serving ladies the best pieces, in smaller amounts</li>
+          </ol>
+        </details>
+      </section>
+
+      <nav class="next-step" aria-label="Continue reading">
+        <p>Want to review? Go back to <a href="plan-ahead.html">Plan Ahead</a>, <a href="at-the-table.html">At the Table</a> or <a href="carreno.html">Carreño</a>. The sources are on the <a href="references.html">References</a> page.</p>
+      </nav>
+
+    </div>
+  </main>
+
+  <!-- SHARED FOOTER START -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Student project for SIE 415/515 at the University of Arizona. Written in our own words from the sources listed on the <a href="references.html">References</a> page.</p>
+    </div>
+  </footer>
+  <!-- SHARED FOOTER END -->
+</body>
+</html>
