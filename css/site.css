@@ -1103,3 +1103,10 @@ html, body, main { overflow-x: clip; }
   .scene.is-live .scene-table { inset: var(--sp-6) 0 var(--sp-7); }
   .scene-caption { font-size: var(--fs-lg); min-height: 1lh; }
 }
+
+/* ---- Survey ---- */
+.survey { margin-top: var(--sp-4); }
+.q-options.scale { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--sp-2); }
+.q-options.scale li { margin: var(--sp-0); }
+.q-options.scale .q-option { flex-direction: column; align-items: center; height: 100%; text-align: center; font-size: var(--fs-sm); }
+@media (max-width: 40rem) { .q-options.scale { grid-template-columns: minmax(0, 1fr); } .q-options.scale .q-option { flex-direction: row; text-align: left; } }

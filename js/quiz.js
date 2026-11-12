@@ -72,3 +72,31 @@
   actions.hidden = false;
   if (key) { key.hidden = true; }
 }());
+
+/* Survey: three opinion questions. Nothing is sent anywhere; the summary is built on the page. */
+(function () {
+  'use strict';
+
+  var form = document.querySelector('[data-survey]');
+  if (!form) { return; }
+  var out = form.querySelector('.quiz-score');
+  form.querySelector('.quiz-actions').hidden = false;
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    var before = form.querySelector('input[name="s1"]:checked');
+    var after = form.querySelector('input[name="s2"]:checked');
+    var part = form.querySelector('input[name="s3"]:checked');
+    if (!before || !after || !part) {
+      out.textContent = 'Please answer all three questions.';
+    } else {
+      var change = Number(after.value) - Number(before.value);
+      var trend = 'unchanged';
+      if (change > 0) { trend = 'up ' + change + (change === 1 ? ' point' : ' points'); }
+      if (change < 0) { trend = 'down ' + (-change) + (change === -1 ? ' point' : ' points'); }
+      out.textContent = 'Thank you. Your confidence went from ' + before.value + ' to ' + after.value + ' out of 5 (' + trend + '). Most useful part: ' + part.value + '.';
+    }
+    out.hidden = false;
+    out.focus();
+  });
+}());
