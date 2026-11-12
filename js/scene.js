@@ -112,7 +112,10 @@
     /* Act 2: the table moves down a little to make room for the big rule. */
     if (table) {
       var act2 = seg(0.40, 0.46);
-      table.style.transform = 'translateY(' + (act2 * -4).toFixed(2) + '%) scale(' + (1 - 0.2 * act2).toFixed(3) + ')';
+      /* Shrink only as much as the big rule needs, so the table stays large on short screens. */
+      var need = shout ? parseFloat(window.getComputedStyle(shout).fontSize) * 1.2 : 0;
+      var shrink = Math.max(0.08, Math.min(0.2, need / (table.offsetHeight || 1)));
+      table.style.transform = 'translateY(' + (act2 * -3).toFixed(2) + '%) scale(' + (1 - shrink * act2).toFixed(3) + ')';
     }
     if (soup) {
       var s = seg(0.55, 0.62) * (1 - seg(0.87, 0.91));

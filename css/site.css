@@ -1096,3 +1096,10 @@ html, body, main { overflow-x: clip; }
 @keyframes shout-in { 0% { opacity: 0; transform: translateY(2rem) rotate(-4deg) scale(0.85); } 60% { transform: translateY(-0.3rem) rotate(1deg) scale(1.04); } 100% { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .sc-steam path, .sc-phone.is-ringing { animation: none; } }
 @media (max-width: 52rem) { .scene-pin .fx-stamp { display: none; } }
+
+/* Short screens: smaller rule text and tighter margins, so the table keeps its size. */
+@media (max-height: 52rem) and (min-width: 52rem) {
+  .scene-shout { top: var(--sp-4); font-size: var(--fs-2xl-soft); }
+  .scene.is-live .scene-table { inset: var(--sp-6) 0 var(--sp-7); }
+  .scene-caption { font-size: var(--fs-lg); min-height: 1lh; }
+}
