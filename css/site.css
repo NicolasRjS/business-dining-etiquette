@@ -955,3 +955,144 @@ html, body, main { overflow-x: clip; }
   clip-path: none;
 }
 .page-intro { overflow: hidden; }
+
+/* ==========================================================================
+   Journey pages (journey.js) and the restaurant mini game (pick.js)
+   ========================================================================== */
+.with-aside.is-journey { display: block; }
+.with-aside.is-journey > .prose { max-width: none; }
+.with-aside.is-journey > aside { position: static; margin-top: var(--sp-6); }
+.with-aside.is-journey > aside .side-box { max-width: 34rem; }
+.section:has(> .is-journey) { padding-block: var(--sp-0) var(--sp-7); }
+
+.chapter {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-inline: calc(50% - 50vw);
+  padding: var(--sp-8) calc(50vw - 50%);
+  color: var(--c-text);
+  background: var(--c-bg);
+}
+.chapter::before {
+  content: attr(data-n);
+  position: absolute;
+  right: 3vw;
+  top: 50%;
+  z-index: -1;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: clamp(14rem, 46vw, 40rem);
+  line-height: 0.8;
+  color: var(--c-num);
+  transform: translateY(calc(-50% + var(--shift, 0rem))) rotate(var(--turn, 0deg));
+  pointer-events: none;
+}
+.chapter > * { max-width: var(--measure); }
+.chapter > .table-scroll, .chapter > .pick { max-width: 58rem; }
+.prose .chapter > h2 { margin-top: var(--sp-0); font-size: var(--fs-hero); line-height: var(--lh-tight); }
+.chapter.t0 { --c-bg: var(--paper); --c-text: var(--ink); --c-num: var(--paper-deep); --c-link: var(--accent); }
+.chapter.t1 { --c-bg: var(--stage); --c-text: var(--on-ink); --c-num: var(--stage-soft); --c-link: var(--gold); }
+.chapter.t2 { --c-bg: var(--gold); --c-text: var(--ink); --c-num: var(--gold-deep); --c-link: var(--ink); }
+.chapter.t3 { --c-bg: var(--accent); --c-text: var(--on-accent); --c-num: var(--accent-deep); --c-link: var(--gold); }
+.chapter > p > a, .chapter > ul a, .chapter > p .cite a, .chapter > ul .cite a, .chapter > h2 a, .chapter > h3 a,
+.chapter > p > a:visited, .chapter > ul a:visited { color: var(--c-link); }
+.chapter :focus-visible { outline-color: var(--c-link); }
+.chapter .note, .chapter .quote, .chapter .table-scroll, .chapter .pick-card { color: var(--ink); }
+.chapter li::marker { color: var(--c-link); }
+
+/* Children slide in, alternating sides */
+.chapter > * { transition: opacity var(--dur-reveal) var(--ease), transform var(--dur-reveal) var(--ease); }
+.chapter:not(.is-in) > * { opacity: 0; transform: translateX(-5rem) rotate(-2deg); }
+.chapter:nth-of-type(even):not(.is-in) > * { transform: translateX(5rem) rotate(2deg); }
+.chapter:not(.is-in) > h2 { transform: translateY(4rem) scale(0.8); }
+.chapter > :nth-child(2) { transition-delay: 90ms; }
+.chapter > :nth-child(3) { transition-delay: 180ms; }
+.chapter > :nth-child(4) { transition-delay: 270ms; }
+.chapter > :nth-child(5) { transition-delay: 360ms; }
+.chapter > :nth-child(n+6) { transition-delay: 450ms; }
+
+/* Typed quotations */
+.quote blockquote p.is-typing::after { content: "|"; margin-left: 0.1em; color: var(--accent); animation: blink 0.6s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.quote blockquote p.is-typed { animation: cheer 0.5s var(--ease); }
+
+/* ---- Mini game: which one would you book? ---- */
+.pick { margin-block: var(--sp-6); }
+.pick-grid { display: grid; gap: var(--sp-4); margin: var(--sp-4) var(--sp-0); padding: var(--sp-0); list-style: none; }
+@media (min-width: 40rem) { .pick-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 72rem) { .chapter .pick { max-width: none; } .chapter .pick-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.pick-card { position: relative; margin: var(--sp-0); color: var(--ink); }
+.pick-front, .pick-back { padding: var(--sp-4); background: var(--surface); border: var(--bw-thick) solid var(--ink); border-radius: var(--r-lg); }
+.pick-back { margin-top: var(--sp-2); background: var(--paper-deep); }
+.pick-card h4 { margin-bottom: var(--sp-3); font-size: var(--fs-lg); }
+.pick-card dl { margin: var(--sp-0) var(--sp-0) var(--sp-3); font-size: var(--fs-sm); }
+.pick-card dl div { display: flex; justify-content: space-between; gap: var(--sp-3); padding-block: var(--sp-1); border-top: var(--bw) solid var(--rule); }
+.pick-card dt { color: var(--ink-soft); }
+.pick-card dd { margin: var(--sp-0); font-weight: var(--fw-bold); text-align: right; }
+.pick-pitch { font-size: var(--fs-sm); }
+.pick-verdict { margin-bottom: var(--sp-2); font-family: var(--font-display); font-weight: var(--fw-bold); font-size: var(--fs-lg); }
+.pick-back p:last-child { margin-bottom: var(--sp-0); font-size: var(--fs-sm); }
+.pick-status { min-height: 2lh; font-weight: var(--fw-semibold); }
+.meter { display: inline-flex; align-items: flex-end; gap: 2px; }
+.meter i { display: block; width: var(--sp-1); height: var(--sp-2); background: var(--rule); border-radius: 1px; }
+.meter i.is-on { background: var(--accent); height: var(--sp-4); transform-origin: bottom; animation: eq 0.7s var(--ease) infinite alternate; }
+.meter span { margin-left: var(--sp-2); }
+@keyframes eq { from { transform: scaleY(0.35); } to { transform: scaleY(1); } }
+
+/* Live version: the cards flip */
+.pick.is-live .pick-card { display: grid; perspective: 70rem; }
+.pick.is-live .pick-front, .pick.is-live .pick-back { grid-area: 1 / 1; margin: var(--sp-0); backface-visibility: hidden; transition: transform 0.7s var(--ease), box-shadow var(--dur) var(--ease); }
+.pick.is-live .pick-front { display: flex; flex-direction: column; box-shadow: var(--sp-2) var(--sp-2) 0 var(--gold); }
+.pick.is-live .pick-front .pick-btn { margin-top: auto; justify-content: center; }
+.pick.is-live .pick-back { display: flex; flex-direction: column; justify-content: center; transform: rotateY(180deg); }
+.pick.is-live .pick-card:hover:not(.is-flipped) .pick-front { transform: rotateY(-8deg) translateY(-0.4rem); box-shadow: var(--sp-3) var(--sp-3) 0 var(--accent-bright); }
+.pick.is-live .pick-card.is-flipped .pick-front { transform: rotateY(-180deg); }
+.pick.is-live .pick-card.is-flipped .pick-back { transform: rotateY(0deg); }
+.pick-card.is-good .pick-back { background: var(--good-bg); border-color: var(--good); box-shadow: var(--sp-2) var(--sp-2) 0 var(--good-bright); }
+.pick-card.is-good .pick-verdict { color: var(--good); }
+.pick-card.is-bad .pick-back { background: var(--bad-bg); border-color: var(--bad); }
+.pick-card.is-bad .pick-verdict { color: var(--bad); }
+.pick-card.is-bad { animation: shake 0.45s var(--ease) 0.5s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .chapter > *, .chapter:not(.is-in) > * { opacity: 1; transform: none; transition: none; }
+  .meter i.is-on { animation: none; }
+}
+
+/* ---- Home scene, act 2: the dinner happens ---- */
+.scene.is-live { height: 760vh; }
+.scene.is-live .scene-table { transform-origin: 50% 100%; will-change: transform; }
+.sc-soup, .sc-phone { opacity: 0; transform-box: fill-box; transform-origin: center; }
+.sc-liquid { transform-box: fill-box; transform-origin: center; }
+.sc-steam path { opacity: 0; animation: steam 2.4s var(--ease) infinite; }
+.sc-steam path:nth-child(2) { animation-delay: 0.5s; }
+.sc-steam path:nth-child(3) { animation-delay: 1s; }
+@keyframes steam { 0% { opacity: 0; transform: translateY(1rem); } 40% { opacity: 0.75; } 100% { opacity: 0; transform: translateY(-1.5rem); } }
+.sc-phone.is-ringing { animation: ring 0.18s linear infinite; }
+@keyframes ring { 0%, 100% { translate: -3px 0; } 50% { translate: 3px 0; } }
+.scene-shout {
+  position: absolute;
+  left: var(--gutter);
+  right: var(--gutter);
+  top: var(--sp-6);
+  z-index: 3;
+  margin: var(--sp-0);
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-style: italic;
+  font-size: var(--fs-hero);
+  line-height: var(--lh-tight);
+  color: var(--gold);
+  text-shadow: 0 0.06em 0 var(--stage-deep);
+  pointer-events: none;
+}
+.scene:not(.is-live) .scene-shout { display: none; }
+.scene-shout.is-swap { animation: shout-in 0.8s var(--ease); }
+@keyframes shout-in { 0% { opacity: 0; transform: translateY(2rem) rotate(-4deg) scale(0.85); } 60% { transform: translateY(-0.3rem) rotate(1deg) scale(1.04); } 100% { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .sc-steam path, .sc-phone.is-ringing { animation: none; } }
+@media (max-width: 52rem) { .scene-pin .fx-stamp { display: none; } }

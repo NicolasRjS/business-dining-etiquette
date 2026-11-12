@@ -11,6 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/site.css">
+  <script src="js/pick.js" defer></script>
+  <script src="js/journey.js" defer></script>
   <script src="js/motion.js" defer></script>
   <script src="js/fx.js" defer></script>
 </head>
@@ -69,6 +71,78 @@
             <div class="note">
               <span class="note-label">Seating a group</span>
               <p>Round tables make everyone feel included. Avoid sitting at the head of a very long table. As host, seat your guest of honor on your right. If there are only two of you, ask your companion which seat they prefer.<sup class="cite"><a href="references.html#ref-4">[4]</a></sup></p>
+            </div>
+
+            <div class="pick" data-pick>
+              <h3 id="pick-title">Mini game: which one would you book?</h3>
+              <p>You are hosting a client on Thursday. Four restaurants have a free table. Only one is a good choice for a business meal.</p>
+              <ul class="pick-grid" aria-labelledby="pick-title">
+                <li class="pick-card" data-ok="false">
+                  <div class="pick-front">
+                    <h4>Neon Jungle Grill</h4>
+                    <dl>
+                      <div><dt>Noise</dt><dd><span class="meter" data-level="5">Very loud</span></dd></div>
+                      <div><dt>Price</dt><dd>$$</dd></div>
+                      <div><dt>Been there?</dt><dd>Yes</dd></div>
+                      <div><dt>Reservations</dt><dd>Yes</dd></div>
+                    </dl>
+                    <p class="pick-pitch">Jungle theme, with a live drum show every 20 minutes.</p>
+                  </div>
+                  <div class="pick-back">
+                    <p class="pick-verdict">Not this one.</p>
+                    <p>It is a theme restaurant. The noise and the show compete with your conversation.<sup class="cite"><a href="references.html#ref-1">[1]</a></sup></p>
+                  </div>
+                </li>
+                <li class="pick-card" data-ok="false">
+                  <div class="pick-front">
+                    <h4>Le Sommet</h4>
+                    <dl>
+                      <div><dt>Noise</dt><dd><span class="meter" data-level="1">Very quiet</span></dd></div>
+                      <div><dt>Price</dt><dd>$$$$</dd></div>
+                      <div><dt>Been there?</dt><dd>Never</dd></div>
+                      <div><dt>Reservations</dt><dd>Yes</dd></div>
+                    </dl>
+                    <p class="pick-pitch">The most expensive tasting menu in town. It opened last week.</p>
+                  </div>
+                  <div class="pick-back">
+                    <p class="pick-verdict">Not this one.</p>
+                    <p>You have never eaten here, and the prices put pressure on your guest when ordering. Choose a place you know, in the middle price range.<sup class="cite"><a href="references.html#ref-1">[1]</a></sup></p>
+                  </div>
+                </li>
+                <li class="pick-card" data-ok="true">
+                  <div class="pick-front">
+                    <h4>Maple &amp; Main Bistro</h4>
+                    <dl>
+                      <div><dt>Noise</dt><dd><span class="meter" data-level="2">Quiet</span></dd></div>
+                      <div><dt>Price</dt><dd>$$</dd></div>
+                      <div><dt>Been there?</dt><dd>Three times</dd></div>
+                      <div><dt>Reservations</dt><dd>Yes</dd></div>
+                    </dl>
+                    <p class="pick-pitch">Tables set far apart. Five minutes from the office of your guest.</p>
+                  </div>
+                  <div class="pick-back">
+                    <p class="pick-verdict">Table booked.</p>
+                    <p>You know the menu and the service, you can hear each other, the price is in the middle, and it is easy for your guest to reach.<sup class="cite"><a href="references.html#ref-1">[1]</a></sup><sup class="cite"><a href="references.html#ref-4">[4]</a></sup></p>
+                  </div>
+                </li>
+                <li class="pick-card" data-ok="false">
+                  <div class="pick-front">
+                    <h4>Smoke Wagon BBQ</h4>
+                    <dl>
+                      <div><dt>Noise</dt><dd><span class="meter" data-level="3">Lively</span></dd></div>
+                      <div><dt>Price</dt><dd>$</dd></div>
+                      <div><dt>Been there?</dt><dd>Yes</dd></div>
+                      <div><dt>Reservations</dt><dd>No</dd></div>
+                    </dl>
+                    <p class="pick-pitch">Great food. No bookings, and the line is about 40 minutes.</p>
+                  </div>
+                  <div class="pick-back">
+                    <p class="pick-verdict">Not this one.</p>
+                    <p>Always reserve. Waiting in line with a guest suggests that you did not organize the meeting.<sup class="cite"><a href="references.html#ref-1">[1]</a></sup></p>
+                  </div>
+                </li>
+              </ul>
+              <p class="pick-status" role="status" aria-live="polite"></p>
             </div>
 
             <h2 id="know-guest">2. Know your guest</h2>
