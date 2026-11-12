@@ -15,6 +15,7 @@
   var caption = scene.querySelector('[data-scene-caption]');
   var shout = scene.querySelector('[data-scene-shout]');
   var meter = scene.querySelector('[data-scene-meter]');
+  var pin = scene.querySelector('.scene-pin');
   var copy = scene.querySelector('.scene-copy');
   var table = scene.querySelector('.scene-table');
   var mat = scene.querySelector('.sc-mat');
@@ -69,8 +70,9 @@
 
   function readScroll() {
     var rect = scene.getBoundingClientRect();
-    var room = rect.height - window.innerHeight;
-    progress = room > 0 ? clamp(-rect.top / room) : 1;
+    var offset = parseFloat(window.getComputedStyle(pin).top) || 0;   /* height of the sticky header */
+    var room = rect.height - pin.offsetHeight;
+    progress = room > 0 ? clamp((offset - rect.top) / room) : 1;
   }
 
   function draw() {
@@ -113,8 +115,8 @@
     if (table) {
       var act2 = seg(0.40, 0.46);
       /* Shrink only as much as the big rule needs, so the table stays large on short screens. */
-      var need = shout ? parseFloat(window.getComputedStyle(shout).fontSize) * 1.2 : 0;
-      var shrink = Math.max(0.08, Math.min(0.2, need / (table.offsetHeight || 1)));
+      var need = shout ? parseFloat(window.getComputedStyle(shout).fontSize) * 1.7 + 12 : 0;
+      var shrink = Math.max(0.1, Math.min(0.24, need / (table.offsetHeight || 1)));
       table.style.transform = 'translateY(' + (act2 * -3).toFixed(2) + '%) scale(' + (1 - shrink * act2).toFixed(3) + ')';
     }
     if (soup) {

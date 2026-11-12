@@ -1110,3 +1110,39 @@ html, body, main { overflow-x: clip; }
 .q-options.scale li { margin: var(--sp-0); }
 .q-options.scale .q-option { flex-direction: column; align-items: center; height: 100%; text-align: center; font-size: var(--fs-sm); }
 @media (max-width: 40rem) { .q-options.scale { grid-template-columns: minmax(0, 1fr); } .q-options.scale .q-option { flex-direction: row; text-align: left; } }
+
+/* ---- Header stays within reach (header.js) ---- */
+.site-header { position: sticky; top: 0; z-index: 40; box-shadow: var(--shadow-sm); transition: transform var(--dur) var(--ease); }
+[id] { scroll-margin-top: calc(var(--header-h, 0px) + var(--sp-4)); }
+.with-aside > aside { top: calc(var(--header-h, 0px) + var(--sp-4)); }
+@media (max-width: 52rem) {
+  .site-header.is-away { transform: translateY(-101%); }
+}
+@media (min-width: 52.01rem) {
+  .scene.is-live .scene-pin { top: var(--header-h, 0px); height: calc(100vh - var(--header-h, 0px)); height: calc(100svh - var(--header-h, 0px)); }
+}
+
+/* ---- Lighter scene: flat shadows, shorter trip, a way to skip it ---- */
+.scene.is-live { height: 560vh; }
+.pc-shadow { opacity: 0.4; }
+.pc-shadow * { fill: var(--stage-deep); stroke: none; }
+.pc-shadow [fill="none"], .pc-shadow text { display: none; }
+.scene-skip {
+  position: absolute;
+  right: var(--gutter);
+  bottom: var(--sp-7);
+  z-index: 4;
+  padding: var(--sp-2) var(--sp-4);
+  border: var(--bw-thick) solid var(--gold);
+  border-radius: var(--r-pill);
+  color: var(--gold);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+  transition: background-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+.scene-skip:visited { color: var(--gold); }
+.scene-skip:hover, .scene-skip:focus-visible { background: var(--gold); color: var(--ink); }
+.scene:not(.is-live) .scene-skip { display: none; }
+@media (max-width: 40rem) { .scene-skip { bottom: auto; top: var(--sp-3); right: var(--sp-3); } }
+.scene.is-live .scene-pin { min-height: 0; }
