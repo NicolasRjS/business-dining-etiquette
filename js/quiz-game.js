@@ -221,9 +221,12 @@
       state.score += gained;
       item.result = 'right';
       ui.card.classList.add('is-right');
-      burst(buttons[item.correct]);
+      burst(buttons[item.correct], 14 + state.streak * 8);
       float('+' + gained);
+      flash('flash-good');
+      if (state.streak >= 2) { call(state.streak >= 5 ? 'ON FIRE x' + state.streak : 'STREAK x' + state.streak); }
     } else {
+      flash('flash-bad');
       state.streak = 0;
       state.lives -= 1;
       item.result = 'wrong';
@@ -298,6 +301,19 @@
       game.appendChild(bit);
       (function (node) { window.setTimeout(function () { node.remove(); }, 1000); }(bit));
     }
+  }
+  function flash(name) {
+    if (reduce) { return; }
+    game.classList.remove('flash-good', 'flash-bad');
+    void game.offsetWidth;
+    game.classList.add(name);
+  }
+  function call(text) {
+    if (reduce) { return; }
+    var tag = el('span', 'streak-call', text);
+    tag.setAttribute('aria-hidden', 'true');
+    game.appendChild(tag);
+    window.setTimeout(function () { tag.remove(); }, 1100);
   }
   function float(text) {
     if (reduce) { return; }
